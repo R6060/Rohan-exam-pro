@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Exam Pro</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #0b5ed7;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+    }
+
+    header p {
+      margin-top: 8px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0b5ed7;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      color: #198754;
+      margin: 10px 0;
+    }
+
+    button {
+      background: #0b5ed7;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #084298;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+    }
+
+    .exam {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎓 ROHAN EXAM PRO</h1>
+  <p>Pharmacy Examination Practice Platform</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>📚 Welcome to Rohan Exam Pro</h2>
+    <p>
+      Practice Pharmacy examinations, improve your knowledge,
+      and prepare for your final examinations.
+    </p>
+
+    <div class="price">TZS 1,000</div>
+    <p>Access fee per examination.</p>
+  </div>
+
+
+  <div class="card">
+    <h2>💳 Payment</h2>
+
+    <p><strong>Payment Number:</strong> 0718169959</p>
+
+    <p style="margin-top:10px;">
+      After payment, enter your name and transaction details below.
+    </p>
+
+    <input type="text" id="studentName" placeholder="Enter your full name">
+
+    <input type="text" id="transaction"
+           placeholder="Enter transaction number">
+
+    <button onclick="submitPayment()">Submit Payment</button>
+
+    <p id="paymentMessage" style="margin-top:15px;"></p>
+  </div>
+
+
+  <div class="card">
+    <h2>🧪 Pharmacy Exams</h2>
+
+    <div class="exam">
+      <h3>Pharmaceutical Dosage Forms</h3>
+      <p>Practice questions for Pharmaceutical Dosage Forms.</p>
+      <button onclick="startExam('Dosage Forms')">
+        Start Exam
+      </button>
+    </div>
+
+    <div class="exam">
+      <h3>Pharmacology</h3>
+      <p>Test your knowledge of Pharmacology.</p>
+      <button onclick="startExam('Pharmacology')">
+        Start Exam
+      </button>
+    </div>
+
+    <div class="exam">
+      <h3>Pharmaceutical Chemistry</h3>
+      <p>Practice Pharmaceutical Chemistry questions.</p>
+      <button onclick="startExam('Pharmaceutical Chemistry')">
+        Start Exam
+      </button>
+    </div>
+
+    <div class="exam">
+      <h3>Pharmacy Law & Ethics</h3>
+      <p>Practice Pharmacy Law and Ethics questions.</p>
+      <button onclick="startExam('Law & Ethics')">
+        Start Exam
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  <p>© 2026 Rohan Exam Pro</p>
+  <p>Pharmacy Students Learning Platform</p>
+</footer>
+
+
+<script>
+
+function submitPayment() {
+
+  let name = document.getElementById("studentName").value;
+  let transaction = document.getElementById("transaction").value;
+
+  if (name === "" || transaction === "") {
+
+    document.getElementById("paymentMessage").innerHTML =
+      "⚠️ Please enter your name and transaction number.";
+
+  } else {
+
+    document.getElementById("paymentMessage").innerHTML =
+      "✅ Payment details received. Your access will be verified.";
+
+  }
+}
+
+
+function startExam(subject) {
+
+  alert(
+    "🔒 " + subject +
+    " exam is locked.\n\n" +
+    "Payment: TZS 1,000\n" +
+    "Send payment to: 0718169959"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
